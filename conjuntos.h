@@ -8,6 +8,8 @@ struct  conjuntos {
 
 typedef struct conjuntos Conjunto;
 
-Conjunto *crear_vacio();
+Conjunto * crear_vacio();
+Conjunto * union_conjunto(Conjunto *A, Conjunto *B);
+void mostrar(Conjunto *A);
 
  #endif

@@ -13,3 +13,14 @@ Conjunto *crear_vacio(){
         con->cardinalidad = 0;
         return con;
 }
+
+Conjunto *union_conjunto(Conjunto *A, Conjunto *B){
+	Conjunto *conjunto_final, cf;
+	conjunto_final = &cf;
+
+	return conjunto_final;
+}
+
+void mostrar(Conjunto *A){
+	//wtf, donde voy a imprimir! alguien recuerda que hace esta funcion??
+}
