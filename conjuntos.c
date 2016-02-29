@@ -16,7 +16,7 @@ int crear_vacio(Conjunto *A){
         return 1;
 }
 
-Conjunto *potencia(Conjunto *A){
+Conjunto * potencia(Conjunto *A, Conjunto * B){
         int car = 0;
         int i = 1, j,k;
         int basta = 0;
@@ -26,6 +26,8 @@ Conjunto *potencia(Conjunto *A){
         int ultimo;
         int cardio = 0;
         int cambio = 0;
+
+        int validar = 0;
 
         printf(" apuntador de lo que llego: %d\n",  A);
         printf(" cardinalidad de lo que llego: %d\n",  A->cardinalidad);
@@ -56,6 +58,10 @@ Conjunto *potencia(Conjunto *A){
                         p[pos].cardinalidad = cardio;
                         //printf("cardinalidad del elemento %d\n ", cardio);
                         if(cardio != 0){
+                                validar = A->cardinalidad - cardio;
+                                if(inicial - (distancia + k) == validar){
+                                    inicial++;
+                                }
                                 p[pos].elementos[0] = A->elementos[inicial];
                                 printf("%d, ", p[pos].elementos[0]);
                                 for(k = 1; k <= cardio-1;k++){
@@ -91,7 +97,10 @@ Conjunto *potencia(Conjunto *A){
                 }
                 cardio++;
         }
-        return p;
+
+        B = p;
+        printf("Cardiolel%d\n", (B+3)->cardinalidad);
+        return B;
 }
 
 
