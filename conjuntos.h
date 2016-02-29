@@ -13,6 +13,6 @@ int crear_vacio(Conjunto *A);
 int factorial(int num);
 int subconjuntosPotencia(int cardinalidad, int subCardinalidad);
 
-Conjunto *potencia(Conjunto*A, Conjunto *p);
+Conjunto *potencia(Conjunto*A);
 
  #endif

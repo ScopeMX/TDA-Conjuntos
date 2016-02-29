@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include "conjuntos.h"
 
+Conjunto A;
+Conjunto *p;
+
 int main(){
-        Conjunto A;
         crear_vacio(&A);
         printf("cardinalidad de A = %d\n", A.cardinalidad);
 
@@ -19,7 +21,7 @@ int main(){
 
         printf("%s\n", "paso 1, done");
 
-        Conjunto *p = potencia(&A, p);
+        p = potencia(&A);
 
         printf("%s\n", "paso 2, done");
         printf("%d\n",p);

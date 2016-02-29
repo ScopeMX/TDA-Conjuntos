@@ -12,11 +12,11 @@ int subconjuntosPotencia(int cardinalidad, int subCardinalidad);
 
 
 int crear_vacio(Conjunto *A){
-        A->cardinalidad = 0;
+        A->cardinalidad = 4;
         return 1;
 }
 
-Conjunto * potencia(Conjunto *A, Conjunto * B){
+Conjunto *potencia(Conjunto *A){
         int car = 0;
         int i = 1, j,k;
         int basta = 0;
@@ -98,9 +98,7 @@ Conjunto * potencia(Conjunto *A, Conjunto * B){
                 cardio++;
         }
 
-        B = p;
-        printf("Cardiolel%d\n", (B+3)->cardinalidad);
-        return B;
+        return p;
 }
 
 
