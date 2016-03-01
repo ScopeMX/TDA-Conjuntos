@@ -107,6 +107,27 @@ Conjunto *potencia(Conjunto *A){
         return p;
 }
 
+Conjunto eliminar(Conjunto *c ,int e){
+int i,j;
+if(c->cardinalidad==0){
+return *c;// es vacio 
+}
+else{
+for(i=0;i<(c->cardinalidad);i++){
+if(c->elementos[i]==e){
+    for(j=i;j<(c->cardinalidad);j++){
+        c->elementos[j]=c->elementos[j+1];
+    }
+    (*c).cardinalidad--;
+    return *c;
+}
+
+}
+    printf("No se encontro el elemento");
+}
+
+return *c;
+}
 //funciones aparte
 
 int factorial(int num){

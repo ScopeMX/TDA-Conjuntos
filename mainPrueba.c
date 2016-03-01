@@ -4,7 +4,9 @@
 Conjunto A;
 Conjunto *p;
 
+
 int main(){
+    int s,el;
         crear_vacio(&A);
         printf("cardinalidad de A = %d\n", A.cardinalidad);
 
@@ -32,6 +34,17 @@ int main(){
         for(i = 0; i < 4; i++){
             printf("%d\n",(p+i)->cardinalidad);
         }
-
+            for(s=0;s<A.cardinalidad;s++){
+                printf("\nElemento de A: %d\n",A.elementos[s]);
+            }
+        printf("\nIngresa el elemento a eliminar: ");
+        scanf("%d",&el);
+        eliminar(&A,el);
+        printf("cardinalidad : %d\n ", A.cardinalidad);
+        for(s=0;s<A.cardinalidad;s++){
+                printf("\nElemento de A: %d\n",A.elementos[s]);
+            }
+        
+        getch();
         return 0;
 }

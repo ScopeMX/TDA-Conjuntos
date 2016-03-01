@@ -16,5 +16,5 @@ int factorial(int num);
 int subconjuntosPotencia(int cardinalidad, int subCardinalidad);
 
 Conjunto *potencia(Conjunto*A);
-
+Conjunto eliminar(Conjunto *c, int e);
  #endif
