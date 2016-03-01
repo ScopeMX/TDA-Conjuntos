@@ -132,6 +132,7 @@ Conjunto *potencia(Conjunto *A){
 Conjunto eliminar(Conjunto *c ,int e){
 int i,j;
 if(c->cardinalidad==0){
+printf("\nEs vacio\n");
 return *c;// es vacio 
 }
 else{
@@ -145,10 +146,42 @@ if(c->elementos[i]==e){
 }
 
 }
-    printf("No se encontro el elemento");
+    printf("No se encontro el elemento\n");
 }
 
 return *c;
+}
+
+Conjunto *diferencia(Conjunto *a, Conjunto *b){
+Conjunto dif,*p;
+int ia,ip;
+int k=0;
+if(a->cardinalidad==0){
+dif.cardinalidad=0;
+return &dif;
+}
+//else if(b->cardinalidad==0){
+//dif=&a;//
+//*p=&dif;
+//return &p;
+//}
+/*else{
+p=interseccion(&a,&b);
+for(ia=0;ia<(a->cardinalidad);ia++){
+    for(ip=0;ip<(p->cardinalidad);ip++){
+        if(a->elementos[ia] == p->elementos[ip]){
+            eliminar(&a,p->elementos[ip]);
+            break;
+                                                }
+        else{
+            dif.elementos[k]=a->elementos[ia];
+            k++;
+            }
+                                        }
+                                    
+                                    }
+return &dif;*/
+//}
 }
 //funciones aparte
 

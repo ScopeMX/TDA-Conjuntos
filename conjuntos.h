@@ -18,4 +18,5 @@ int subconjuntosPotencia(int cardinalidad, int subCardinalidad);
 
 Conjunto *potencia(Conjunto*A);
 Conjunto eliminar(Conjunto *c, int e);
+Conjunto *diferencia(Conjunto *a, Conjunto *b);
  #endif
