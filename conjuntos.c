@@ -14,10 +14,10 @@ Conjunto *crear_vacio(){
         return con;
 }
 
-Conjunto *union_conjunto(Conjunto *A, Conjunto *B){
-	Conjunto *conjunto_final, cf;
-	conjunto_final = &cf;
-
+Conjunto *union_conjunto(Conjunto* A){
+	Conjunto *conjunto_final, ca;
+	ca = *A;
+	printf("Eyah: %d", ca.cardinalidad);
 	return conjunto_final;
 }
 

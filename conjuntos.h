@@ -9,7 +9,7 @@ struct  conjuntos {
 typedef struct conjuntos Conjunto;
 
 Conjunto * crear_vacio();
-Conjunto * union_conjunto(Conjunto *A, Conjunto *B);
+Conjunto * union_conjunto(Conjunto *A);
 void mostrar(Conjunto *A);
 
  #endif
