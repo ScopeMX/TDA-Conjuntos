@@ -5,7 +5,7 @@
 Conjunto A;
 Conjunto B;
 Conjunto C;
-Conjunto Union;
+Conjunto *Union;
 Conjunto *p;
 
 int main(){
@@ -34,8 +34,13 @@ int main(){
 
         printf("%s\n", "paso 1, done");
 
+        //Union
         printf("Union B con C\n");
-        p = union_conjuntos(&A,&C);
+        Union = union_conjuntos(&A,&C);
+        printf("Cardinal Union: %d \n", Union->cardinalidad);
+        //imprimir(Union);
+
+        //Potencia
         p = potencia(&A);
 
         printf("%s\n", "paso 2, done");
