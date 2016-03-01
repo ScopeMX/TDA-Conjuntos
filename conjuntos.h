@@ -11,6 +11,7 @@ typedef struct conjuntos Conjunto;
 int crear_vacio(Conjunto *A);
 
 int es_vacio(Conjunto *A);
+Conjunto *interseccion(Conjunto *A, Conjunto *B);
 
 int factorial(int num);
 int subconjuntosPotencia(int cardinalidad, int subCardinalidad);

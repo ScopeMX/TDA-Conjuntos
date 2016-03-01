@@ -22,6 +22,28 @@ int es_vacio(Conjunto *A) {
     return 0; // no es vacio
 }
 
+Conjunto *interseccion(Conjunto *A, Conjunto *B) {
+    Conjunto resultado;
+    int i, j;
+    int k = 0; // la posicion en el nuevo arreglo
+    // No es lo mas optimo pero bueno
+    for (i = 0; i < A->cardinalidad; i++) {
+        // printf("A=%d \n", A->elementos[i]);
+        for (j = 0; j < B->cardinalidad; j++) {
+            // printf("B=%d \n", B->elementos[j]);
+            if (B->elementos[j] == A->elementos[i]) {
+                // printf("Igual = %d\n", k);
+                resultado.elementos[k] = B->elementos[j];
+                ++k;
+                break; // Para que no siga buscando
+            }
+        }
+    }
+    // Cardinalidad = cuantas veces encontro elementos iguales
+    (&resultado)->cardinalidad = k;
+    return &resultado;
+}
+
 Conjunto *potencia(Conjunto *A){
         int car = 0;
         int i = 1, j,k;
@@ -116,7 +138,7 @@ else{
 for(i=0;i<(c->cardinalidad);i++){
 if(c->elementos[i]==e){
     for(j=i;j<(c->cardinalidad);j++){
-        c->elementos[j]=c->elementos[j+1];
+        c->elementos[j]=c->elementos[j+1];//recorre los lugares del arreglo 
     }
     (*c).cardinalidad--;
     return *c;
