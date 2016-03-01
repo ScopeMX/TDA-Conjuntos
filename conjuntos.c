@@ -16,6 +16,13 @@ int crear_vacio(Conjunto *A){
         return 1;
 }
 
+int es_vacio(Conjunto *A) {
+  if (A->cardinalidad == 0)
+    return 1;
+  else
+    return 0;
+}
+
 Conjunto *potencia(Conjunto *A){
         int car = 0;
         int i = 1, j,k;
