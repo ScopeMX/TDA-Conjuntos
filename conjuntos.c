@@ -15,12 +15,11 @@ int crear_vacio(Conjunto *A){
         A->cardinalidad = 4;
         return 1;
 }
-
+// Supongo que siempre le llega un apuntador
 int es_vacio(Conjunto *A) {
-  if (A->cardinalidad == 0)
-    return 1;
-  else
-    return 0;
+    if (A->cardinalidad == 0)
+        return 1; // es vacio
+    return 0; // no es vacio
 }
 
 Conjunto *potencia(Conjunto *A){
@@ -108,23 +107,21 @@ Conjunto *potencia(Conjunto *A){
         return p;
 }
 
-
-
 //funciones aparte
 
 int factorial(int num){
-        if(num == 1 || num == 0){
-                return 1;
-        }
-        else{
-                return num*factorial(num-1);
-        }
+    if(num == 1 || num == 0){
+        return 1;
+    }
+    else{
+        return num*factorial(num-1);
+    }
 }
 
 int subconjuntosPotencia(int cardinalidad, int subCardinalidad){
-        int sub = 0;
-        printf("car = %d\n", cardinalidad);
-        printf("subcar = %d\n", subCardinalidad);
-        sub = factorial(cardinalidad)/(factorial(subCardinalidad)*factorial(cardinalidad - subCardinalidad));
-        return sub;
+    int sub = 0;
+    printf("car = %d\n", cardinalidad);
+    printf("subcar = %d\n", subCardinalidad);
+    sub = factorial(cardinalidad)/(factorial(subCardinalidad)*factorial(cardinalidad - subCardinalidad));
+    return sub;
 }
