@@ -15,6 +15,7 @@ int crear_vacio(Conjunto *A){
         A->cardinalidad = 4;
         return 1;
 }
+
 /*IMPRIMIR*/
 void imprimir(Conjunto*A){
         int i=0;
@@ -72,6 +73,36 @@ Conjunto *union_conjuntos(Conjunto*A, Conjunto *B){
         printf("IGUALES: %d \n",iguales);
         printf("--------------------------\n");
         return &Union;
+}
+
+// Supongo que siempre le llega un apuntador
+int es_vacio(Conjunto *A) {
+    if (A->cardinalidad == 0)
+        return 1; // es vacio
+    return 0; // no es vacio
+}
+
+Conjunto *interseccion(Conjunto *A, Conjunto *B) {
+    Conjunto resultado;
+    int i, j;
+    int k = 0; // la posicion en el nuevo arreglo
+    // No es lo mas optimo pero bueno
+    for (i = 0; i < A->cardinalidad; i++) {
+        // printf("A=%d \n", A->elementos[i]);
+        for (j = 0; j < B->cardinalidad; j++) {
+            // printf("B=%d \n", B->elementos[j]);
+            if (B->elementos[j] == A->elementos[i]) {
+                // printf("Igual = %d\n", k);
+                resultado.elementos[k] = B->elementos[j];
+                ++k;
+                break; // Para que no siga buscando
+            }
+        }
+    }
+    // Cardinalidad = cuantas veces encontro elementos iguales
+    (&resultado)->cardinalidad = k;
+    return &resultado;
+
 }
 
 Conjunto *potencia(Conjunto *A){
@@ -159,28 +190,42 @@ Conjunto *potencia(Conjunto *A){
         return p;
 }
 
+Conjunto eliminar(Conjunto *c ,int e){
+int i,j;
+if(c->cardinalidad==0){
+return *c;// es vacio 
+}
+else{
+for(i=0;i<(c->cardinalidad);i++){
+if(c->elementos[i]==e){
+    for(j=i;j<(c->cardinalidad);j++){
+        c->elementos[j]=c->elementos[j+1];//recorre los lugares del arreglo 
+    }
+    (*c).cardinalidad--;
+    return *c;
+}
 
+}
+    printf("No se encontro el elemento");
+}
 
+return *c;
+}
 //funciones aparte
 
 int factorial(int num){
-        if(num == 1 || num == 0){
-                return 1;
-        }
-        else{
-                return num*factorial(num-1);
-        }
+    if(num == 1 || num == 0){
+        return 1;
+    }
+    else{
+        return num*factorial(num-1);
+    }
 }
 
 int subconjuntosPotencia(int cardinalidad, int subCardinalidad){
-        int sub = 0;
-        printf("car = %d\n", cardinalidad);
-        printf("subcar = %d\n", subCardinalidad);
-        sub = factorial(cardinalidad)/(factorial(subCardinalidad)*factorial(cardinalidad - subCardinalidad));
-        return sub;
-}
-
-
-void mostrar(Conjunto *A){
-	//wtf, donde voy a imprimir! alguien recuerda que hace esta funcion??
+    int sub = 0;
+    printf("car = %d\n", cardinalidad);
+    printf("subcar = %d\n", subCardinalidad);
+    sub = factorial(cardinalidad)/(factorial(subCardinalidad)*factorial(cardinalidad - subCardinalidad));
+    return sub;
 }
