@@ -1,13 +1,54 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "conjuntos.h"
 
 Conjunto A;
+Conjunto D;
 Conjunto B;
+Conjunto C;
+Conjunto *Union;
 Conjunto *p;
 
 int main(){
+
     int s,el,t,u;
+
+
+        crear_vacio(&B);
+        crear_vacio(&C);
+        crear_vacio(&A);
+        crear_vacio(&D);
+
+        printf("cardinalidad de A = %d\n", A.cardinalidad);
+
+        D.elementos[0] = 1;
+        D.elementos[1] = 2;
+        D.elementos[2] = 3;
+        C.elementos[0] = 4;
+        C.elementos[1] = 5;
+        C.elementos[2] = 1;
+
+
+        D.cardinalidad = 3;
+        C.cardinalidad = 3;
+
+        printf("elementos de A = %d\n", D.elementos[0]);
+        printf("elementos de A = %d\n", D.elementos[1]);
+
+        printf("%s\n", "paso 1, done");
+
+        //Union
+        printf("Union D con C\n");
+        Union = union_conjuntos(&D,&C);
+        printf("Cardinal Union: %d \n", Union->cardinalidad);
+        //imprimir(Union);
+
+        //Potencia
+        p = potencia(&A);
+
+    int s,el;
+
         crear_vacio(&A);
 
         A.elementos[0] = 1;
@@ -19,7 +60,7 @@ int main(){
         B.cardinalidad=0;
         A.cardinalidad=4;
 
-    for(s=0;s<A.cardinalidad;s++){
+    /*for(s=0;s<A.cardinalidad;s++){
         printf("\nElemento de A: %d\n",A.elementos[s]);
             }
     for(t=0;t<B.cardinalidad;t++){
@@ -29,9 +70,10 @@ int main(){
 
     for(u=0;u<(p->cardinalidad);u++){
         printf("\nElemento de P: %d\n",p->elementos[t]);
-    }
+    }*/
 
         //A.elementos[4] = 6;
+
 
         //int i;
         //for(i = 0; i < 4; i++){
@@ -61,6 +103,7 @@ int main(){
         //      printf("p= %d \n", p->elementos[j]);
         // }
 
+
         // printf("elementos de A = %d\n", A.elementos[0]);
         // printf("elementos de A = %d\n", A.elementos[1]);
         //
@@ -77,6 +120,6 @@ int main(){
         // for(i = 0; i < 4; i++){
         //     printf("%d\n",(p+i)->cardinalidad);
         // }
-        system("pause");
+
         return 0;
 }
