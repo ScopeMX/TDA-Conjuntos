@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "conjuntos.h"
@@ -6,39 +5,45 @@
 Conjunto A;
 Conjunto D;
 Conjunto B;
-Conjunto C;
-<<<<<<< HEAD
-Conjunto E;
-Conjunto *Union;
-=======
-Conjunto Union;
->>>>>>> cfc69ba3ce1121d02c252d77dbabade334320147
+Conjunto resultado;
 Conjunto *p;
 Conjunto bueno;
 
 int main(){
-
-
-
-
+    // Inician pruebas de interseccion y es vacio
     crear_vacio(&B);
-    crear_vacio(&C);
+    crear_vacio(&resultado);
     crear_vacio(&A);
+    int prueba;
+
+    A.elementos[0] = 1;
+    A.elementos[1] = 3;
+    A.elementos[2] = 4;
+    A.elementos[3] = 5;
+    A.elementos[4] = 7;
+
+    B.elementos[0] = 4;
+    B.elementos[1] = 5;
+    B.elementos[2] = 6;
+    B.elementos[3] = 1;
+
+    B.cardinalidad = 4;
+    A.cardinalidad = 5;
+    prueba = interseccion(&A, &B, &resultado);
+    printf("resultado cardinalidad: %d\n", resultado.cardinalidad);
+    printf("resultado es vacio: %d\n", es_vacio(&resultado));
+    int i;
+    for (i = 0; i<resultado.cardinalidad; i++) {
+        printf("Elementos: %d\n", resultado.elementos[i]);
+    }
+    // Terminan pruebas de interseccion y es vacio
+    /*
     crear_vacio(&D);
 
     printf("cardinalidad de A = %d\n", A.cardinalidad);
-    
 
-           crear_vacio(&A);
+    crear_vacio(&A);
 
-        A.elementos[0] = 1;
-        A.elementos[1] = 3;
-        A.elementos[2] = 4;
-        A.elementos[3] = 5;
-        B.elementos[0] = 4;
-        B.elementos[1] = 5;
-        B.cardinalidad=2;
-        A.cardinalidad=4;
 
 
     D.elementos[0] = 1;
@@ -48,7 +53,6 @@ int main(){
     C.elementos[1] = 5;
     C.elementos[2] = 1;
 
-
     D.cardinalidad = 3;
     C.cardinalidad = 3;
 
@@ -56,14 +60,13 @@ int main(){
     printf("elementos de A = %d\n", D.elementos[0]);
     printf("elementos de A = %d\n", D.elementos[1]);
 
-
     //Union
     printf("Union D con C\n");
     union_ab = union_conjuntos(&D,&C,&Union);
     printf("%d \n", union_ab);
     printf("Cardinal Union: %d \n", Union.cardinalidad);
     imprimir(&Union);
-    
+
     //Potencia
     //p = potencia(&A);
 //int s,el;
@@ -93,6 +96,7 @@ for(r=0;r<A.cardinalidad;r++){
 
     imprimir(&A);
     imprimir(&B);
+    */
 /*for(s=0;s<A.cardinalidad;s++){
     printf("\nElemento de A: %d\n",A.elementos[s]);
 >>>>>>> cfc69ba3ce1121d02c252d77dbabade334320147
@@ -119,10 +123,10 @@ getch();
         int s,el;
         //for(i = 0; i < 4; i++){
          //  printf("%d\n",(p+i)->cardinalidad);
-        
+
             for(s=0;s<A.cardinalidad;s++){
                 printf("\nElemento de A: %d\n",A.elementos[s]);}
-            
+
         printf("\nIngresa el elemento a eliminar: ");
         scanf("%d",&el);
         eliminar(&A,el);
@@ -130,7 +134,7 @@ getch();
         for(s=0;s<A.cardinalidad;s++){
                printf("\nElemento de A: %d\n",A.elementos[s]);
            }
-        
+
        // A.cardinalidad = 4;
        // B.cardinalidad = 2;
 
@@ -239,7 +243,5 @@ getch();
                 printf("%d ", (p+i)->elementos[j]);
             }*/
         //}
-
-
         return 0;
 }

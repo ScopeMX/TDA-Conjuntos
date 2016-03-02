@@ -89,8 +89,7 @@ int es_vacio(Conjunto *A) {
     return 0; // no es vacio
 }
 
-Conjunto *interseccion(Conjunto *A, Conjunto *B) {
-    Conjunto resultado;
+int interseccion(Conjunto *A, Conjunto *B, Conjunto *resultado) {
     int i, j;
     int k = 0; // la posicion en el nuevo arreglo
     // No es lo mas optimo pero bueno
@@ -100,16 +99,15 @@ Conjunto *interseccion(Conjunto *A, Conjunto *B) {
             // printf("B=%d \n", B->elementos[j]);
             if (B->elementos[j] == A->elementos[i]) {
                 // printf("Igual = %d\n", k);
-                resultado.elementos[k] = B->elementos[j];
+                resultado->elementos[k] = B->elementos[j];
                 ++k;
                 break; // Para que no siga buscando
             }
         }
     }
     // Cardinalidad = cuantas veces encontro elementos iguales
-    (&resultado)->cardinalidad = k;
-    return &resultado;
-
+    resultado->cardinalidad = k;
+    return 1;
 }
 
 int potencia(Conjunto *A, Conjunto **h){
@@ -243,15 +241,15 @@ else{
                 }
             }
         }
-   
+
    for(con=0;con<a->cardinalidad;con++){
     d->elementos[con]=a->elementos[con];
     d->cardinalidad++;
    }
-                                                  
+
 return 1;
-   }                                 
-  }   
+   }
+  }
 //funciones aparte
 
 int factorial(int num){
