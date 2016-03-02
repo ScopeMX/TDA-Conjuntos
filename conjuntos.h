@@ -18,7 +18,7 @@ int factorial(int num);
 int subconjuntosPotencia(int cardinalidad, int subCardinalidad);
 
 int potencia(Conjunto*A, Conjunto **h);
-Conjunto *union_conjuntos(Conjunto*A, Conjunto *B);
+int union_conjuntos(Conjunto*A, Conjunto *B, Conjunto *Union);
 void imprimir(Conjunto *A);
 int eliminar(Conjunto *c, int e);
 int diferencia(Conjunto *a, Conjunto *b,Conjunto *c);

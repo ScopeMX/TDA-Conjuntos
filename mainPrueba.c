@@ -7,7 +7,7 @@ Conjunto A;
 Conjunto D;
 Conjunto B;
 Conjunto C;
-Conjunto *Union;
+Conjunto Union;
 Conjunto *p;
 Conjunto bueno;
 
@@ -34,17 +34,18 @@ int main(){
     D.cardinalidad = 3;
     C.cardinalidad = 3;
 
+    int union_ab;
     printf("elementos de A = %d\n", D.elementos[0]);
     printf("elementos de A = %d\n", D.elementos[1]);
 
-    printf("%s\n", "paso 1, done");
 
     //Union
     printf("Union D con C\n");
-    Union = union_conjuntos(&D,&C);
-    printf("Cardinal Union: %d \n", Union->cardinalidad);
-    //imprimir(Union);
-
+    union_ab = union_conjuntos(&D,&C,&Union);
+    printf("%d \n", union_ab);
+    printf("Cardinal Union: %d \n", Union.cardinalidad);
+    imprimir(&Union);
+    
     //Potencia
     //p = potencia(&A);
 
@@ -73,7 +74,10 @@ int main(){
     B.cardinalidad=0;
     A.cardinalidad=4;
 
+    printf("%s\n", "paso 1, done");
 
+    imprimir(&A);
+    imprimir(&B);
 /*for(s=0;s<A.cardinalidad;s++){
     printf("\nElemento de A: %d\n",A.elementos[s]);
         }
