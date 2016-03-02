@@ -7,8 +7,12 @@ Conjunto A;
 Conjunto D;
 Conjunto B;
 Conjunto C;
+<<<<<<< HEAD
 Conjunto E;
 Conjunto *Union;
+=======
+Conjunto Union;
+>>>>>>> cfc69ba3ce1121d02c252d77dbabade334320147
 Conjunto *p;
 Conjunto bueno;
 
@@ -23,6 +27,19 @@ int main(){
     crear_vacio(&D);
 
     printf("cardinalidad de A = %d\n", A.cardinalidad);
+    
+
+           crear_vacio(&A);
+
+        A.elementos[0] = 1;
+        A.elementos[1] = 3;
+        A.elementos[2] = 4;
+        A.elementos[3] = 5;
+        B.elementos[0] = 4;
+        B.elementos[1] = 5;
+        B.cardinalidad=2;
+        A.cardinalidad=4;
+
 
     D.elementos[0] = 1;
     D.elementos[1] = 2;
@@ -35,24 +52,25 @@ int main(){
     D.cardinalidad = 3;
     C.cardinalidad = 3;
 
+    int union_ab;
     printf("elementos de A = %d\n", D.elementos[0]);
     printf("elementos de A = %d\n", D.elementos[1]);
 
-    printf("%s\n", "paso 1, done");
 
     //Union
     printf("Union D con C\n");
-    Union = union_conjuntos(&D,&C);
-    printf("Cardinal Union: %d \n", Union->cardinalidad);
-    //imprimir(Union);
-
+    union_ab = union_conjuntos(&D,&C,&Union);
+    printf("%d \n", union_ab);
+    printf("Cardinal Union: %d \n", Union.cardinalidad);
+    imprimir(&Union);
+    
     //Potencia
     //p = potencia(&A);
-
 //int s,el;
 
     crear_vacio(&A);
 
+<<<<<<< HEAD
     A.elementos[0] = 7;
     A.elementos[1] = 8;
     A.elementos[2] = 6;
@@ -70,6 +88,14 @@ int r,t,u;
 printf("----------------------------------------------------------");
 for(r=0;r<A.cardinalidad;r++){
     printf("\nElemento de A: %d\n",A.elementos[r]);
+
+    printf("%s\n", "paso 1, done");
+
+    imprimir(&A);
+    imprimir(&B);
+/*for(s=0;s<A.cardinalidad;s++){
+    printf("\nElemento de A: %d\n",A.elementos[s]);
+>>>>>>> cfc69ba3ce1121d02c252d77dbabade334320147
         }
     printf("\nCardinalidad de A: %d \n",A.cardinalidad);
 
