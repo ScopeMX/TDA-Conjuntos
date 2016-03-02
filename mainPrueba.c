@@ -12,7 +12,7 @@ Conjunto *p;
 
 int main(){
 
-    int s,el,t,u;
+
 
 
         crear_vacio(&B);
@@ -47,9 +47,7 @@ int main(){
         //Potencia
         p = potencia(&A);
 
-    int s,el;
-
-        crear_vacio(&A);
+           crear_vacio(&A);
 
         A.elementos[0] = 1;
         A.elementos[1] = 3;
@@ -57,7 +55,7 @@ int main(){
         A.elementos[3] = 5;
         B.elementos[0] = 4;
         B.elementos[1] = 5;
-        B.cardinalidad=0;
+        B.cardinalidad=2;
         A.cardinalidad=4;
 
     /*for(s=0;s<A.cardinalidad;s++){
@@ -75,25 +73,25 @@ int main(){
         //A.elementos[4] = 6;
 
 
-        //int i;
+        int i,s,el;
         //for(i = 0; i < 4; i++){
-           // printf("%d\n",(p+i)->cardinalidad);
-        //}
-            //for(s=0;s<A.cardinalidad;s++){
-              //  printf("\nElemento de A: %d\n",A.elementos[s]);
-            //}
-        //printf("\nIngresa el elemento a eliminar: ");
-        //scanf("%d",&el);
-        //eliminar(&A,el);
-        //printf("cardinalidad : %d\n ", A.cardinalidad);
-        //for(s=0;s<A.cardinalidad;s++){
-        //        printf("\nElemento de A: %d\n",A.elementos[s]);
-         //   }
+         //  printf("%d\n",(p+i)->cardinalidad);
+        
+            for(s=0;s<A.cardinalidad;s++){
+                printf("\nElemento de A: %d\n",A.elementos[s]);}
+            
+        printf("\nIngresa el elemento a eliminar: ");
+        scanf("%d",&el);
+        eliminar(&A,el);
+        printf("cardinalidad : %d\n ", A.cardinalidad);
+        for(s=0;s<A.cardinalidad;s++){
+               printf("\nElemento de A: %d\n",A.elementos[s]);
+           }
         
        // A.cardinalidad = 4;
        // B.cardinalidad = 2;
 
-        printf("cardinalidad de A = %d\n", A.cardinalidad);
+        //printf("cardinalidad de A = %d\n", A.cardinalidad);
         //printf("cardinalidad de B = %d\n", B.cardinalidad);
 
         // p = interseccion(&A, &B);
@@ -120,6 +118,6 @@ int main(){
         // for(i = 0; i < 4; i++){
         //     printf("%d\n",(p+i)->cardinalidad);
         // }
-
+           getch();
         return 0;
 }

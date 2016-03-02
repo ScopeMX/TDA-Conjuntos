@@ -190,11 +190,11 @@ Conjunto *potencia(Conjunto *A){
         return p;
 }
 
-Conjunto eliminar(Conjunto *c ,int e){
+int eliminar(Conjunto *c ,int e){
 int i,j;
 if(c->cardinalidad==0){
 printf("\nEs vacio\n");
-return *c;// es vacio 
+return 1;// es vacio 
 }
 else{
 for(i=0;i<(c->cardinalidad);i++){
@@ -203,23 +203,23 @@ if(c->elementos[i]==e){
         c->elementos[j]=c->elementos[j+1];//recorre los lugares del arreglo 
     }
     (*c).cardinalidad--;
-    return *c;
+    return 1; // si se pudo :D
 }
 
 }
     printf("No se encontro el elemento\n");
 }
 
-return *c;
+return 2;// no se pudo
 }
 
-Conjunto *diferencia(Conjunto *a, Conjunto *b){
+int diferencia(Conjunto *a, Conjunto *b,Conjunto *c){
 Conjunto dif,*p;
 int ia,ip;
 int k=0;
 if(a->cardinalidad==0){
-dif.cardinalidad=0;
-return &dif;
+c->cardinalidad=a->cardinalidad;
+return 2;// no se pudo
 }
 //else if(b->cardinalidad==0){
 //dif=&a;//
