@@ -37,7 +37,7 @@ int union_conjuntos(Conjunto*A, Conjunto *B, Conjunto *Union){
         Union->cardinalidad = 0;
         if(A->cardinalidad == 0 && B->cardinalidad ==0){
             Union->cardinalidad = 0;
-            printf("%s\n", "La unión resulto en vacío \n");
+            printf("%s\n", "La union resulto en vacio \n");
             return 0;
         }
 

@@ -22,6 +22,19 @@ int main(){
     crear_vacio(&D);
 
     printf("cardinalidad de A = %d\n", A.cardinalidad);
+    
+
+           crear_vacio(&A);
+
+        A.elementos[0] = 1;
+        A.elementos[1] = 3;
+        A.elementos[2] = 4;
+        A.elementos[3] = 5;
+        B.elementos[0] = 4;
+        B.elementos[1] = 5;
+        B.cardinalidad=2;
+        A.cardinalidad=4;
+
 
     D.elementos[0] = 1;
     D.elementos[1] = 2;
@@ -48,19 +61,6 @@ int main(){
     
     //Potencia
     //p = potencia(&A);
-
-
-           crear_vacio(&A);
-
-        A.elementos[0] = 1;
-        A.elementos[1] = 3;
-        A.elementos[2] = 4;
-        A.elementos[3] = 5;
-        B.elementos[0] = 4;
-        B.elementos[1] = 5;
-        B.cardinalidad=2;
-        A.cardinalidad=4;
-
 //int s,el;
 
     crear_vacio(&A);
