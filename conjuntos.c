@@ -212,37 +212,39 @@ if(c->elementos[i]==e){
 return 0;// no se pudo
 }
 
-int diferencia(Conjunto *a, Conjunto *b,Conjunto *c){
-Conjunto dif,*p;
-int ia,ip;
-int k=0;
+int diferencia(Conjunto *a, Conjunto *b,Conjunto *d){
+int ia,ib;
+int k,re;
+int con;
 if(a->cardinalidad==0){
-c->cardinalidad=a->cardinalidad;
-return 2;// no se pudo
+d->cardinalidad=a->cardinalidad;
+return 0;// no se pudo
 }
-//else if(b->cardinalidad==0){
-//dif=&a;//
-//*p=&dif;
-//return &p;
-//}
-/*else{
-p=interseccion(&a,&b);
-for(ia=0;ia<(a->cardinalidad);ia++){
-    for(ip=0;ip<(p->cardinalidad);ip++){
-        if(a->elementos[ia] == p->elementos[ip]){
-            eliminar(&a,p->elementos[ip]);
-            break;
-                                                }
-        else{
-            dif.elementos[k]=a->elementos[ia];
-            k++;
+else if(b->cardinalidad==0){
+d->cardinalidad=a->cardinalidad;
+for(k=0;k<(d->cardinalidad);k++){
+        d->elementos[k]=a->elementos[k];
+}
+return 1;// si se pudo
+}
+else{
+   for(ia=0;ia<(a->cardinalidad);ia++){
+        for(ib=0;ib<(b->cardinalidad);ib++){
+            if(a->elementos[ia] == b->elementos[ib]){
+                eliminar(a,b->elementos[ib]);
+                ia--;
+                }
             }
-                                        }
-
-                                    }
-return &dif;*/
-//}
-}
+        }
+   
+   for(con=0;con<a->cardinalidad;con++){
+    d->elementos[con]=a->elementos[con];
+    d->cardinalidad++;
+   }
+                                                  
+return 1;
+   }                                 
+  }   
 //funciones aparte
 
 int factorial(int num){

@@ -7,6 +7,7 @@ Conjunto A;
 Conjunto D;
 Conjunto B;
 Conjunto C;
+Conjunto E;
 Conjunto *Union;
 Conjunto *p;
 Conjunto bueno;
@@ -48,47 +49,47 @@ int main(){
     //Potencia
     //p = potencia(&A);
 
-
-           crear_vacio(&A);
-
-        A.elementos[0] = 1;
-        A.elementos[1] = 3;
-        A.elementos[2] = 4;
-        A.elementos[3] = 5;
-        B.elementos[0] = 4;
-        B.elementos[1] = 5;
-        B.cardinalidad=2;
-        A.cardinalidad=4;
-
 //int s,el;
 
     crear_vacio(&A);
 
-    A.elementos[0] = 1;
-    A.elementos[1] = 3;
-    A.elementos[2] = 4;
-    A.elementos[3] = 5;
-    B.elementos[0] = 4;
-    B.elementos[1] = 5;
-    B.cardinalidad=0;
-    A.cardinalidad=4;
-
-
-/*for(s=0;s<A.cardinalidad;s++){
-    printf("\nElemento de A: %d\n",A.elementos[s]);
+    A.elementos[0] = 7;
+    A.elementos[1] = 8;
+    A.elementos[2] = 6;
+    A.elementos[3] = 4;
+    A.elementos[4] = 9;
+    B.elementos[0] = 1;
+    B.elementos[1] = 2;
+    B.elementos[2] = 3;
+    B.elementos[3] = 11;
+    B.elementos[4] = 24;
+    B.cardinalidad=5;
+    A.cardinalidad=5;
+    E.cardinalidad=0;
+int r,t,u;
+printf("----------------------------------------------------------");
+for(r=0;r<A.cardinalidad;r++){
+    printf("\nElemento de A: %d\n",A.elementos[r]);
         }
+    printf("\nCardinalidad de A: %d \n",A.cardinalidad);
+
 for(t=0;t<B.cardinalidad;t++){
     printf("\nElemento de B: %d\n",B.elementos[t]);
         }
-    p=diferencia(&A,&B);
+    printf("Cardinalidad de B: %d \n",B.cardinalidad);
 
-for(u=0;u<(p->cardinalidad);u++){
-    printf("\nElemento de P: %d\n",p->elementos[t]);
-}*/
+    diferencia(&A,&B,&E);
+
+for(u=0;u<(E.cardinalidad);u++){
+    printf("\nElemento de E: %d\n",E.elementos[u]);
+}
+    printf("Cardinalidad de E: %d \n",E.cardinalidad);
+
 
     //A.elementos[4] = 6;
 
-
+printf("==============================================================");
+getch();
         int s,el;
         //for(i = 0; i < 4; i++){
          //  printf("%d\n",(p+i)->cardinalidad);
