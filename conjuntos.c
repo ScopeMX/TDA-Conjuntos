@@ -34,7 +34,7 @@ int agregar(Conjunto * A, int x){
 int producto_carteciano(Conjunto A, Conjunto B, Carteciano *R){
     printf("%d %d \n", A.cardinalidad, B.cardinalidad);
     R->cardinalidad=A.cardinalidad*B.cardinalidad;
-    printf("Aquí empieza producto cartesiano \nCardinalidad del resultado: %d\n", R->cardinalidad);
+    //printf("Aquí empieza producto cartesiano \nCardinalidad del resultado: %d\n", R->cardinalidad);
     int i;
     int elemento=1;
     for (i = 0; i < A.cardinalidad; ++i)
@@ -44,14 +44,22 @@ int producto_carteciano(Conjunto A, Conjunto B, Carteciano *R){
         {
             R->elementos[j][0]=A.elementos[i];
             R->elementos[j][1]=B.elementos[j];
-            printf("Elemento %d: (%d,%d)\n", elemento, R->elementos[j][0], R->elementos[j][1]);
+            //printf("Elemento %d: (%d,%d)\n", elemento, R->elementos[j][0], R->elementos[j][1]);
             elemento++;
-        }        
-        
+        }
+        printf("Cardinalidad del Producto Cartesiano: %d", R->cardinalidad);
     }
     return 1;
 }
 //Final FUnción productoCarteciano
+//Función para imprimir el producto cartesiano
+void imprimirCartesiano(Carteciano R){
+        int i;
+        for(i=0; i < R.cardinalidad;++i){
+                printf("Elemento %d: (%d,%d)"; R.elementos[i][0], R.elementos[i][1];
+        }
+}
+//Final imprimir cartesiano.
 
 /*IMPRIMIR*/
 void imprimir(Conjunto*A){
