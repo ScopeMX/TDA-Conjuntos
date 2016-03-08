@@ -21,6 +21,25 @@ int crear_vacio(Conjunto *A){
         return 1;
 }
 
+int cardinalidad(Conjunto * A){
+    int car = A->cardinalidad;
+    return car;
+}
+
+
+int agregar(Conjunto * A, int x){
+    int n = 0, l=0;
+    for(l;l<A->cardinalidad;l++){
+        if(x == A->elementos[l]){
+            return 0;
+        }                
+    }
+    A->elementos[A->cardinalidad] = x;
+    A->cardinalidad++;
+    return 1;
+}
+
+
 //Producto Cartesiano
 int producto_carteciano(Conjunto A, Conjunto B, Carteciano *R){
     printf("%d %d \n", A.cardinalidad, B.cardinalidad);

@@ -17,7 +17,7 @@ int main(){
     crear_vacio(&A);
     int prueba;
 
-    A.elementos[0] = 1;
+/*    A.elementos[0] = 1;
     A.elementos[1] = 3;
     A.elementos[2] = 4;
     A.elementos[3] = 5;
@@ -29,20 +29,33 @@ int main(){
     B.elementos[3] = 1;
 
     B.cardinalidad = 4;
-    A.cardinalidad = 5;
-    prueba = interseccion(&A, &B, &resultado);
+    A.cardinalidad = 5;*/
+
+    int c = cardinalidad(&A);
+    printf("%d\n", c);
+
+    agregar(&A, 5);
+    agregar(&A, 3);
+    agregar(&A, 4);
+    agregar(&A, 5);
+    c = cardinalidad(&A);
+    printf("%d\n", c);
+    imprimir(&A);
+    
+
+ /*   prueba = interseccion(&A, &B, &resultado);
     printf("resultado cardinalidad: %d\n", resultado.cardinalidad);
     printf("resultado es vacio: %d\n", es_vacio(&resultado));
     int i;
     for (i = 0; i<resultado.cardinalidad; i++) {
         printf("Elementos: %d\n", resultado.elementos[i]);
-    }
+    }*/
     // Terminan pruebas de interseccion y es vacio
 
     //Pruebas de producto cartesiano:
-    producto_carteciano(A, B, &PCR);
+  //  producto_carteciano(A, B, &PCR);
     //Checo que el apuntador sea correcto
-    printf("%d\n Final de producto cartesiano", PCR.cardinalidad);
+  //  printf("%d\n Final de producto cartesiano", PCR.cardinalidad);
 
     /*
     crear_vacio(&D);

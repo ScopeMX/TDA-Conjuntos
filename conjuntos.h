@@ -28,4 +28,7 @@ void imprimir(Conjunto *A);
 int eliminar(Conjunto *c, int e);
 int diferencia(Conjunto *a, Conjunto *b,Conjunto *d);
 
+int cardinalidad(Conjunto * A);
+int agregar(Conjunto * A, int x);
+
  #endif
