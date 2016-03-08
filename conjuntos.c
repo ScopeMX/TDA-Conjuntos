@@ -47,7 +47,7 @@ int producto_carteciano(Conjunto A, Conjunto B, Carteciano *R){
             //printf("Elemento %d: (%d,%d)\n", elemento, R->elementos[j][0], R->elementos[j][1]);
             elemento++;
         }
-        printf("Cardinalidad del Producto Cartesiano: %d", R->cardinalidad);
+        //printf("Cardinalidad del Producto Cartesiano: %d", R->cardinalidad);
     }
     return 1;
 }
