@@ -1,5 +1,5 @@
-#ifndef CONJUNTOS_H
-#define CONJUNTOS_H
+#ifndef __CONJUNTOS_H__
+#define __CONJUNTOS_H__
 
 struct  conjuntos {
         int elementos[100];
@@ -14,18 +14,18 @@ struct productoCarteciano {
 };
 typedef struct productoCarteciano Carteciano;
 
-int crear_vacio(Conjunto *A);
-int producto_carteciano(Conjunto A, Conjunto B, Carteciano *R);
-int es_vacio(Conjunto *A);
-int interseccion(Conjunto *A, Conjunto *B, Conjunto *res);
+int crear_vacio(Conjunto*);
+int producto_carteciano(Conjunto, Conjunto, Carteciano*);
+int es_vacio(Conjunto*);
+int interseccion(Conjunto*, Conjunto*, Conjunto*);
 
-int factorial(int num);
-int subconjuntosPotencia(int cardinalidad, int subCardinalidad);
+int factorial(int);
+int subconjuntosPotencia(int, int);
 
-int potencia(Conjunto*A, Conjunto **h);
-int union_conjuntos(Conjunto*A, Conjunto *B, Conjunto *Union);
-void imprimir(Conjunto *A);
-int eliminar(Conjunto *c, int e);
+int potencia(Conjunto*, Conjunto**);
+int union_conjuntos(Conjunto*, Conjunto*, Conjunto*);
+void imprimir(Conjunto*);
+int eliminar(Conjunto*, int);
 int diferencia(Conjunto *a, Conjunto *b,Conjunto *d);
 
  #endif
