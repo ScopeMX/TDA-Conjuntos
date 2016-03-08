@@ -1,3 +1,0 @@
-With gcc:
-
->gcc -o name_exe mainPrueba.c conjuntos.c
