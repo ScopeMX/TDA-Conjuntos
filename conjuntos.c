@@ -56,7 +56,7 @@ int producto_carteciano(Conjunto A, Conjunto B, Carteciano *R){
 void imprimirCartesiano(Carteciano R){
         int i;
         for(i=0; i < R.cardinalidad;++i){
-                printf("Elemento %d: (%d,%d)"; R.elementos[i][0], R.elementos[i][1];
+                printf("Elemento %d: (%d,%d)", R.elementos[i][0], R.elementos[i][1];
         }
 }
 //Final imprimir cartesiano.
