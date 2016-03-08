@@ -61,50 +61,37 @@ int union_conjuntos(Conjunto*A, Conjunto *B, Conjunto *Union){
         int i=0, j=0, k=0, iguales=0, z=0;
         int cardinalidad_union=0;
         int already=0;
-
         Union->cardinalidad = 0;
         if(A->cardinalidad == 0 && B->cardinalidad ==0){
             Union->cardinalidad = 0;
             printf("%s\n", "La union resulto en vacio \n");
-            return 0;
-        }
-
+            return 0;        }
         for(i;i<A->cardinalidad;i++){
             if(Union->cardinalidad<100){
                 Union->elementos[i] = A->elementos[i];
                 Union->cardinalidad++;
-
             }else{
                 printf("Conjunto Union lleno!\n");
-                break;
-            }
-        }
+                break;           }        }
         cardinalidad_union = Union->cardinalidad;
-
-
         for(j;j<B->cardinalidad;j++, i++){
             if(Union->cardinalidad<100){
                 for(k;k<cardinalidad_union;k++){//Recorrer lo que ya llevo
                         if(B->elementos[j]==Union->elementos[k]){//Encontro coincidencia
                             already=1;
-                            iguales++;
-                        }
-                }
+                            iguales++;                        }                }
                 k=0;
                 if(already==0){
                     Union->elementos[i] = B->elementos[j];
                     Union->cardinalidad++;
                     already=0;
-                }
-            }else{
+                }            }else{
                 printf("Conjunto Union lleno!\n");
                 break;
             }
         }
         printf("Cardinalidad de la Union: %d\n",Union->cardinalidad);
-
         imprimir(Union);
-
         printf("IGUALES: %d \n",iguales);
         printf("--------------------------\n");
         return 1;
