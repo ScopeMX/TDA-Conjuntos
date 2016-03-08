@@ -1,16 +1,6 @@
 #include <stdio.h>
+#include "conjuntos.h"
 
-struct  conjuntos {
-        int elementos[100];
-        int cardinalidad;
-};
-typedef struct conjuntos Conjunto;
-
-struct productoCarteciano {
-    int elementos[100][2];
-    int cardinalidad;
-};
-typedef struct productoCarteciano Carteciano;
 
 int factorial(int num);
 int subconjuntosPotencia(int cardinalidad, int subCardinalidad);
