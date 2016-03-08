@@ -4,8 +4,13 @@ struct  conjuntos {
         int elementos[100];
         int cardinalidad;
 };
-
 typedef struct conjuntos Conjunto;
+
+struct productoCarteciano {
+    int elementos[100][2];
+    int cardinalidad;
+};
+typedef struct productoCarteciano Carteciano;
 
 int factorial(int num);
 int subconjuntosPotencia(int cardinalidad, int subCardinalidad);
@@ -15,6 +20,29 @@ int crear_vacio(Conjunto *A){
         A->cardinalidad = 0;
         return 1;
 }
+
+//Producto Cartesiano
+int producto_carteciano(Conjunto A, Conjunto B, Carteciano *R){
+    printf("%d %d \n", A.cardinalidad, B.cardinalidad);
+    R->cardinalidad=A.cardinalidad*B.cardinalidad;
+    printf("Aquí empieza producto cartesiano \nCardinalidad del resultado: %d\n", R->cardinalidad);
+    int i;
+    int elemento=1;
+    for (i = 0; i < A.cardinalidad; ++i)
+    {
+        int j;
+        for (j = 0; j < B.cardinalidad; ++j)
+        {
+            R->elementos[j][0]=A.elementos[i];
+            R->elementos[j][1]=B.elementos[j];
+            printf("Elemento %d: (%d,%d)\n", elemento, R->elementos[j][0], R->elementos[j][1]);
+            elemento++;
+        }        
+        
+    }
+    return 1;
+}
+//Final FUnción productoCarteciano
 
 /*IMPRIMIR*/
 void imprimir(Conjunto*A){

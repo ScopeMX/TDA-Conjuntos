@@ -8,9 +8,14 @@ struct  conjuntos {
 
 typedef struct conjuntos Conjunto;
 
+struct productoCarteciano {
+    int elementos[100][2];
+    int cardinalidad;
+};
+typedef struct productoCarteciano Carteciano;
 
 int crear_vacio(Conjunto *A);
-
+int producto_carteciano(Conjunto A, Conjunto B, Carteciano *R);
 int es_vacio(Conjunto *A);
 int interseccion(Conjunto *A, Conjunto *B, Conjunto *res);
 

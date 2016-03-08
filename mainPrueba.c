@@ -8,6 +8,7 @@ Conjunto B;
 Conjunto resultado;
 Conjunto *p;
 Conjunto bueno;
+Carteciano PCR;
 
 int main(){
     // Inician pruebas de interseccion y es vacio
@@ -37,6 +38,12 @@ int main(){
         printf("Elementos: %d\n", resultado.elementos[i]);
     }
     // Terminan pruebas de interseccion y es vacio
+
+    //Pruebas de producto cartesiano:
+    producto_carteciano(A, B, &PCR);
+    //Checo que el apuntador sea correcto
+    printf("%d\n Final de producto cartesiano", PCR.cardinalidad);
+
     /*
     crear_vacio(&D);
 
