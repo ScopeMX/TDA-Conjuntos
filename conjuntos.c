@@ -100,9 +100,9 @@ int union_conjuntos(Conjunto*A, Conjunto *B, Conjunto *Union){
             }
         }
         printf("Cardinalidad de la Union: %d\n",Union->cardinalidad);
-        imprimir(Union);
-        printf("IGUALES: %d \n",iguales);
-        printf("--------------------------\n");
+        //imprimir(Union);
+        //printf("IGUALES: %d \n",iguales);
+        //printf("--------------------------\n");
         return 1;
 }
 
