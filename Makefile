@@ -1,3 +1,5 @@
+run:a.out
+	./a.out
 a.out:main.o conjuntos.o
 	gcc main.o conjuntos.o
 main.o:main.c
