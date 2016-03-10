@@ -182,7 +182,7 @@ union_conjuntos (Conjunto * A, Conjunto * B, Conjunto * Union)
 int
 es_vacio (Conjunto * A)
 {
-  if (A->cardinalidad == 0)
+  if (cardinalidad(A) == 0)
     return 1;			// es vacio
   return 0;			// no es vacio
 }
@@ -193,10 +193,10 @@ interseccion (Conjunto * A, Conjunto * B, Conjunto * resultado)
   int i, j;
   int k = 0;			// la posicion en el nuevo arreglo
   // No es lo mas optimo pero bueno
-  for (i = 0; i < A->cardinalidad; i++)
+  for (i = 0; i < cardinalidad(A); i++)
     {
       // printf("A=%d \n", A->elementos[i]);
-      for (j = 0; j < B->cardinalidad; j++)
+      for (j = 0; j < cardinalidad(B); j++)
 	{
 	  // printf("B=%d \n", B->elementos[j]);
 	  if (B->elementos[j] == A->elementos[i])
