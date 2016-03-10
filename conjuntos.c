@@ -4,7 +4,36 @@
 
 int factorial (int num);
 int subconjuntosPotencia (int cardinalidad, int subCardinalidad);
+void crear_potencia(Conjunto *A, Conjunto * p);
+void for2(Conjunto *A, Conjunto * p);
 
+int basta = 0;
+int pos = 0;
+int inicial = 0;
+int distancia = 0;
+int ultimo;
+int cardio = 0;
+int cambio = 0;
+int validar = 0;
+int car = 0;
+int iq = 0;
+int ja = 0;
+int ka = 0;
+
+void iniciar_variables(){
+    basta = 0;
+    pos = 0;
+    inicial = 0;
+    distancia = 0;
+    ultimo;
+    cardio = 0;
+    cambio = 0;
+    validar = 0;
+    car = 0;
+    iq = 0;
+    ja = 0;
+    ka = 0;
+}
 
 int
 crear_vacio (Conjunto * A)
@@ -37,8 +66,6 @@ agregar (Conjunto * A, int x)
   return 1;
 }
 
-
-//Producto Cartesiano
 int
 producto_carteciano (Conjunto A, Conjunto B, Carteciano * R)
 {
@@ -62,8 +89,6 @@ producto_carteciano (Conjunto A, Conjunto B, Carteciano * R)
   return 1;
 }
 
-//Final FUnción productoCarteciano
-//Función para imprimir el producto cartesiano
 void
 imprimirCartesiano (Carteciano R)
 {
@@ -75,9 +100,7 @@ imprimirCartesiano (Carteciano R)
     }
 }
 
-//Final imprimir cartesiano.
-
- /*IMPRIMIR*/ void
+ void
 imprimir (Conjunto * A)
 {
   if (A->cardinalidad == 0)
@@ -95,7 +118,7 @@ imprimir (Conjunto * A)
     }
 }
 
- /*UNION*/ int
+int
 union_conjuntos (Conjunto * A, Conjunto * B, Conjunto * Union)
 {
   int i = 0, j = 0, k = 0, iguales = 0, z = 0;
@@ -193,113 +216,99 @@ interseccion (Conjunto * A, Conjunto * B, Conjunto * resultado)
 int
 potencia (Conjunto * A, Conjunto ** h)
 {
-  int car = 0;
-  int i = 1, j, k;
-  int basta = 0;
-  int pos = 0;
-  int inicial = 0;
-  int distancia = 0;
-  int ultimo;
-  int cardio = 0;
-  int cambio = 0;
+  iniciar_variables();
 
-  int validar = 0;
-
-  //printf(" apuntador de lo que llego: %d\n",  A);
-  //printf(" cardinalidad de lo que llego: %d\n",  A->cardinalidad);
-  //printf(" elemento 1 de lo que llego: %d\n",  A->elementos[0]);
-  //printf(" elemento 2 de lo que llego: %d\n",  A->elementos[1]);
-
-  for (i = 0; i <= A->cardinalidad; i++)
+  for (iq = 0; iq<= A->cardinalidad; iq++)
     {
-      car = car + subconjuntosPotencia (A->cardinalidad, i);
+      car = car + subconjuntosPotencia (A->cardinalidad, iq);
     }
-  //printf("%s %d\n", "cardinalidad calculada = ", car);
-
 
   Conjunto p[car];
-  i = 1;
-  while (i == 1)
+  iq = 1;
+  while (iq == 1)
     {
-      //printf("%s\n", "se metio");
       inicial = 0;
       distancia = 0;
-
       if (cardio > A->cardinalidad)
 	{
 	  break;
 	}
 
       basta = subconjuntosPotencia (A->cardinalidad, cardio);	//cuantos subconjutos debe crear con esa cardinalidad
-      //printf("Basta= %d\n", basta);
-
       if (basta == 0)
 	{
-	  i = 0;
-	}			//cuando ya no haya mas subconjutos se detiene
-
-      for (j = 0; j < basta; j++)
-	{
-	  p[pos].cardinalidad = cardio;
-	  //printf("cardinalidad del elemento %d\n ", cardio);
-	  if (cardio != 0)
-	    {
-	      validar = A->cardinalidad - cardio;
-	      if (inicial - (distancia + k) == validar)
-		{
-		  inicial++;
-		}
-	      p[pos].elementos[0] = A->elementos[inicial];
-	      //printf("%d, ", p[pos].elementos[0]);
-	      for (k = 1; k <= cardio - 1; k++)
-		{
-		  if ((inicial + distancia + k) >= A->cardinalidad)
-		    {
-		      p[pos].elementos[k] =
-			A->
-			elementos[(inicial + distancia + k -
-				   A->cardinalidad)];
-		      if ((A->cardinalidad - (distancia + k)) == 2)
-			{
-			  cambio = 1;
-			}
-		    }
-		  else
-		    {
-		      p[pos].elementos[k] =
-			A->elementos[inicial + distancia + k];
-		    }
-		  ultimo = A->elementos[inicial + distancia + k];
-		  //printf("%d, ", p[pos].elementos[k]);
-		}
-	      //printf("%s\n", "");
-	      if (ultimo == A->elementos[(A->cardinalidad - 1)]
-		  || cambio == 1)
-		{
-		  inicial++;
-		  distancia = 0;
-		  cambio = 0;
-		}
-	      else
-		{
-		  distancia++;
-		}
-	      if (cardio == 1)
-		{
-		  inicial++;
-		}
-	    }
-	  else
-	    {
-	      p[pos].cardinalidad = 0;
-	    }
-	  pos++;
+	  iq = 0;
 	}
+    crear_potencia(A, p);
       cardio++;
     }
   *h = p;
   return 1;
 }
+
+void crear_potencia(Conjunto * A,  Conjunto * p){
+    for (ja = 0; ja < basta; ja++)
+  {
+    (p+pos)->cardinalidad = cardio;
+    //printf("cardinalidad del elemento %d\n ", cardio);
+    if (cardio != 0)
+      {
+        validar = A->cardinalidad - cardio;
+        if (inicial - (distancia + ka) == validar)
+      {
+        inicial++;
+      }
+        (p+pos)->elementos[0] = A->elementos[inicial];
+        for2(A, p);
+
+        if (ultimo == A->elementos[(A->cardinalidad - 1)]
+        || cambio == 1)
+      {
+        inicial++;
+        distancia = 0;
+        cambio = 0;
+      }
+        else
+      {
+        distancia++;
+      }
+        if (cardio == 1)
+      {
+        inicial++;
+      }
+      }
+    else
+      {
+        (p+pos)->cardinalidad = 0;
+      }
+    pos++;
+  }
+}
+
+void for2(Conjunto * A, Conjunto * p){
+    for (ka = 1; ka <= cardio - 1; ka++)
+  {
+    if ((inicial + distancia + ka) >= A->cardinalidad)
+      {
+        (p+pos)->elementos[ka] =
+      A->
+      elementos[(inicial + distancia + ka -
+             A->cardinalidad)];
+        if ((A->cardinalidad - (distancia + ka)) == 2)
+      {
+        cambio = 1;
+      }
+      }
+    else
+      {
+        (p+pos)->elementos[ka] =
+      A->elementos[inicial + distancia + ka];
+      }
+    ultimo = A->elementos[inicial + distancia + ka];
+    //printf("%d, ", (p+pos)->elementos[ka]);
+  }
+}
+
 
 int
 eliminar (Conjunto * c, int e)
@@ -373,8 +382,6 @@ diferencia (Conjunto * a, Conjunto * b, Conjunto * d)
       return 1;
     }
 }
-
-//funciones aparte
 
 int
 factorial (int num)
