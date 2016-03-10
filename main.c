@@ -22,7 +22,7 @@ main ()
   A.elementos[0] = 1;
   A.elementos[1] = 3;
   A.elementos[2] = 4;
-  A.elementos[3] = 5;
+ A.elementos[3] = 5;
   A.elementos[4] = 7;
 
   B.elementos[0] = 4;
@@ -32,19 +32,23 @@ main ()
 
   B.cardinalidad = 4;
   A.cardinalidad = 5;
-  prueba = interseccion (&A, &B, &resultado);
-  printf ("resultado cardinalidad: %d\n", resultado.cardinalidad);
-  printf ("resultado es vacio: %d\n", es_vacio (&resultado));
-  int i;
-  for (i = 0; i < resultado.cardinalidad; i++)
-    {
-      printf ("Elementos: %d\n", resultado.elementos[i]);
-    }
+
+  potencia(&A, &p);
+   printf("%d\n", (p+30)->elementos[4]);
+
+  //prueba = interseccion (&A, &B, &resultado);
+ // printf ("resultado cardinalidad: %d\n", resultado.cardinalidad);
+  //printf ("resultado es vacio: %d\n", es_vacio (&resultado));
+  //int i;
+ // for (i = 0; i < resultado.cardinalidad; i++)
+    //{
+      //printf ("Elementos: %d\n", resultado.elementos[i]);
+    //}
   // Terminan pruebas de interseccion y es vacio
 
   //Pruebas de producto cartesiano:
-  producto_carteciano (A, B, &PCR);
+  //producto_carteciano (A, B, &PCR);
   //Checo que el apuntador sea correcto
-  printf ("%d\n Final de producto cartesiano", PCR.cardinalidad);
+  //printf ("%d\n Final de producto cartesiano", PCR.cardinalidad);
   return 0;
 }

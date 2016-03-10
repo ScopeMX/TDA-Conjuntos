@@ -23,8 +23,10 @@ int interseccion (Conjunto *, Conjunto *, Conjunto *);
 
 int factorial (int);
 int subconjuntosPotencia (int, int);
-
+void crear_potencia(Conjunto *A, Conjunto * p);
+void for2(Conjunto *A, Conjunto * p);
 int potencia (Conjunto *, Conjunto **);
+
 int union_conjuntos (Conjunto *, Conjunto *, Conjunto *);
 void imprimir (Conjunto *);
 int eliminar (Conjunto *, int);
