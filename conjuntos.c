@@ -192,23 +192,18 @@ interseccion (Conjunto * A, Conjunto * B, Conjunto * resultado)
 {
   int i, j;
   int k = 0;			// la posicion en el nuevo arreglo
-  // No es lo mas optimo pero bueno
   for (i = 0; i < cardinalidad(A); i++)
     {
-      // printf("A=%d \n", A->elementos[i]);
       for (j = 0; j < cardinalidad(B); j++)
 	{
-	  // printf("B=%d \n", B->elementos[j]);
 	  if (B->elementos[j] == A->elementos[i])
 	    {
-	      // printf("Igual = %d\n", k);
 	      resultado->elementos[k] = B->elementos[j];
 	      ++k;
 	      break;		// Para que no siga buscando
 	    }
 	}
     }
-  // Cardinalidad = cuantas veces encontro elementos iguales
   resultado->cardinalidad = k;
   return 1;
 }
