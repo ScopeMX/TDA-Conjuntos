@@ -13,3 +13,6 @@ gcc nombre_archivo.o nombre_archivoX.o
 ##La versión nuestra
 ###Compilamos y ligamos todo a la vez
 >gcc -o name_exe mainPrueba.c conjuntos.c
+
+##Comprimir
+>tar czvf nombre.tar.gz directorio/
